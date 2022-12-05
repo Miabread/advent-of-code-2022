@@ -32,6 +32,7 @@ impl<T: Solution + Test> Run for T {
         let input = Self::parse(Self::TEST_INPUT);
         assert_eq!(Self::TEST_OUTPUT1, Self::part1(&input));
         assert_eq!(Self::TEST_OUTPUT2, Self::part2(&input));
+        println!("Tests passed");
     }
 }
 
@@ -49,7 +50,7 @@ fn main() {
     };
 
     let input = read_to_string(format!("./input/day{day}.txt")).expect("input file should exist");
-
+    println!("Running Day {day}...");
     solution.test();
     solution.solve(&input);
 }
