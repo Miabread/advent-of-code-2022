@@ -1,6 +1,7 @@
 use std::fs::read_to_string;
 
 mod day1;
+mod day2;
 
 fn main() {
     let day = std::env::args()
@@ -11,6 +12,7 @@ fn main() {
 
     let main = match day {
         1 => day1::main,
+        2 => day2::main,
         _ => panic!("not a valid day"),
     };
 
