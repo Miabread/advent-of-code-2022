@@ -3,6 +3,8 @@ use std::fs::read_to_string;
 mod day1;
 mod day2;
 mod day3;
+mod day4;
+mod util;
 
 trait Solution {
     type Input;
@@ -54,6 +56,7 @@ fn main() {
         1 => &day1::Day1,
         2 => &day2::Day2,
         3 => &day3::Day3,
+        4 => &day4::Day4,
         _ => panic!("not a valid day"),
     };
 
