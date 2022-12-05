@@ -2,17 +2,24 @@ use std::fs::read_to_string;
 
 mod day1;
 mod day2;
+mod day3;
 
 trait Solution {
     type Input;
     fn parse(input: &str) -> Self::Input;
-    fn part1(input: &Self::Input) -> u32;
-    fn part2(input: &Self::Input) -> u32;
+
+    fn part1(_input: &Self::Input) -> u32 {
+        0
+    }
+
+    fn part2(_input: &Self::Input) -> u32 {
+        0
+    }
 }
 
 trait Test {
-    const TEST_OUTPUT1: u32;
-    const TEST_OUTPUT2: u32;
+    const TEST_OUTPUT1: u32 = 0;
+    const TEST_OUTPUT2: u32 = 0;
     const TEST_INPUT: &'static str;
 }
 
@@ -46,6 +53,7 @@ fn main() {
     let solution: &dyn Run = match day {
         1 => &day1::Day1,
         2 => &day2::Day2,
+        3 => &day3::Day3,
         _ => panic!("not a valid day"),
     };
 
