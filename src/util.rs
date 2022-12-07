@@ -1,8 +1,5 @@
 pub fn lines(input: &str) -> impl Iterator<Item = &str> {
-    input
-        .lines()
-        .map(|line| line.trim())
-        .filter(|line| !line.is_empty())
+    input.lines().map(|line| line.trim())
 }
 
 pub fn full_lines(input: &str) -> impl Iterator<Item = &str> {
