@@ -10,12 +10,12 @@ impl Solution for Day6 {
         input.trim().char_indices().collect()
     }
 
-    fn part1(input: &Self::Input) -> u32 {
-        find_consecutive_unique(input, 4) as u32
+    fn part1(input: &Self::Input) -> usize {
+        find_consecutive_unique(input, 4)
     }
 
-    fn part2(input: &Self::Input) -> u32 {
-        find_consecutive_unique(input, 14) as u32
+    fn part2(input: &Self::Input) -> usize {
+        find_consecutive_unique(input, 14)
     }
 }
 
@@ -31,7 +31,7 @@ fn find_consecutive_unique(input: &[(usize, char)], size: usize) -> usize {
 }
 
 impl Test for Day6 {
-    const TEST_OUTPUT1: u32 = 7;
-    const TEST_OUTPUT2: u32 = 19;
+    const TEST_OUTPUT1: usize = 7;
+    const TEST_OUTPUT2: usize = 19;
     const TEST_INPUT: &'static str = "mjqjpqmgbljsphdztnvjfqwrcgsmlb";
 }

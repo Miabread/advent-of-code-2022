@@ -5,7 +5,7 @@ use crate::{util::full_lines, Solution, Test};
 pub struct Day4;
 
 impl Solution for Day4 {
-    type Input = Vec<((u32, u32), (u32, u32))>;
+    type Input = Vec<((usize, usize), (usize, usize))>;
     fn parse(input: &str) -> Self::Input {
         full_lines(input)
             .map(|line| {
@@ -23,7 +23,7 @@ impl Solution for Day4 {
             .collect()
     }
 
-    fn part1(input: &Self::Input) -> u32 {
+    fn part1(input: &Self::Input) -> usize {
         input
             .iter()
             .filter(|(a, b)| {
@@ -31,10 +31,10 @@ impl Solution for Day4 {
                 let is_b_contained = b.0 >= a.0 && b.1 <= a.1;
                 is_a_contained || is_b_contained
             })
-            .count() as u32
+            .count()
     }
 
-    fn part2(input: &Self::Input) -> u32 {
+    fn part2(input: &Self::Input) -> usize {
         input
             .iter()
             .filter(|(a, b)| {
@@ -42,13 +42,13 @@ impl Solution for Day4 {
                 let is_b_colliding = (b.1 >= a.0 && a.0 >= b.0) || (b.1 >= a.1 && a.1 >= b.0);
                 is_a_colliding || is_b_colliding
             })
-            .count() as u32
+            .count()
     }
 }
 
 impl Test for Day4 {
-    const TEST_OUTPUT1: u32 = 2;
-    const TEST_OUTPUT2: u32 = 4;
+    const TEST_OUTPUT1: usize = 2;
+    const TEST_OUTPUT2: usize = 4;
     const TEST_INPUT: &'static str = "
         2-4,6-8
         2-3,4-5

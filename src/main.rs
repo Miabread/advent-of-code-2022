@@ -11,18 +11,18 @@ trait Solution {
     type Input;
     fn parse(input: &str) -> Self::Input;
 
-    fn part1(_input: &Self::Input) -> u32 {
+    fn part1(_input: &Self::Input) -> usize {
         0
     }
 
-    fn part2(_input: &Self::Input) -> u32 {
+    fn part2(_input: &Self::Input) -> usize {
         0
     }
 }
 
 trait Test {
-    const TEST_OUTPUT1: u32 = 0;
-    const TEST_OUTPUT2: u32 = 0;
+    const TEST_OUTPUT1: usize = 0;
+    const TEST_OUTPUT2: usize = 0;
     const TEST_INPUT: &'static str;
 }
 

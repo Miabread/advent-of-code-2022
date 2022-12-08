@@ -5,13 +5,13 @@ use crate::{Solution, Test};
 pub struct Day3;
 
 impl Solution for Day3 {
-    type Input = Vec<(HashSet<u32>, HashSet<u32>)>;
+    type Input = Vec<(HashSet<usize>, HashSet<usize>)>;
     fn parse(input: &str) -> Self::Input {
-        fn parse_pocket(pocket: &str) -> HashSet<u32> {
+        fn parse_pocket(pocket: &str) -> HashSet<usize> {
             let chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
             pocket
                 .chars()
-                .map(|item| 1 + chars.find(item).unwrap() as u32)
+                .map(|item| 1 + chars.find(item).unwrap())
                 .collect()
         }
 
@@ -24,14 +24,14 @@ impl Solution for Day3 {
             .collect()
     }
 
-    fn part1(input: &Self::Input) -> u32 {
+    fn part1(input: &Self::Input) -> usize {
         input
             .iter()
             .map(|(a, b)| a.intersection(b).next().unwrap())
             .sum()
     }
 
-    fn part2(input: &Self::Input) -> u32 {
+    fn part2(input: &Self::Input) -> usize {
         input
             .chunks_exact(3)
             .map(|group| {
@@ -50,8 +50,8 @@ impl Solution for Day3 {
 }
 
 impl Test for Day3 {
-    const TEST_OUTPUT1: u32 = 157;
-    const TEST_OUTPUT2: u32 = 70;
+    const TEST_OUTPUT1: usize = 157;
+    const TEST_OUTPUT2: usize = 70;
     const TEST_INPUT: &'static str = "
         vJrwpWtwJgWrhcsFMMfFFhFp
         jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL

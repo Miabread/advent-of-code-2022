@@ -21,14 +21,14 @@ impl Solution for Day2 {
             .collect()
     }
 
-    fn part1(input: &Self::Input) -> u32 {
+    fn part1(input: &Self::Input) -> usize {
         input
             .iter()
             .map(|&(theirs, ours)| compute_score(theirs, ours))
             .sum()
     }
 
-    fn part2(input: &Self::Input) -> u32 {
+    fn part2(input: &Self::Input) -> usize {
         input
             .iter()
             .map(|&(theirs, ending)| {
@@ -46,7 +46,7 @@ impl Solution for Day2 {
     }
 }
 
-fn compute_score(theirs: Move, ours: Move) -> u32 {
+fn compute_score(theirs: Move, ours: Move) -> usize {
     let x = match ours {
         Move::Rock => 1,
         Move::Paper => 2,
@@ -117,8 +117,8 @@ impl Ord for Move {
 }
 
 impl Test for Day2 {
-    const TEST_OUTPUT1: u32 = 15;
-    const TEST_OUTPUT2: u32 = 12;
+    const TEST_OUTPUT1: usize = 15;
+    const TEST_OUTPUT2: usize = 12;
     const TEST_INPUT: &'static str = "
         A Y
         B X
