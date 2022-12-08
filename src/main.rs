@@ -5,6 +5,7 @@ mod day2;
 mod day3;
 mod day4;
 mod day6;
+mod day7;
 mod util;
 
 trait Solution {
@@ -59,6 +60,7 @@ fn main() {
         3 => &day3::Day3,
         4 => &day4::Day4,
         6 => &day6::Day6,
+        7 => &day7::Day7,
         _ => panic!("not a valid day"),
     };
 
